@@ -1,9 +1,9 @@
 import './Input.css';
 
-export const Input = () => {
+export const MyInput = (props) => {
     return (
         <div>
-            <input type="text" />
+            <input {...props} />
         </div>
     )
 }
