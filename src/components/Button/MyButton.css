@@ -1,0 +1,17 @@
+.MyButton {
+    width: 343px;
+    height: 52px;
+    font-size: 14px;
+    border-radius: 10px;
+    background: #292929;
+    color: #fff;
+    border: none;
+}
+
+.MyButton:hover {
+    background: #4e4d4d;
+}
+
+.MyButton:active {
+    background: #000;
+}
