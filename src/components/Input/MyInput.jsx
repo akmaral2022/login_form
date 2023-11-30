@@ -1,9 +1,9 @@
-import './Input.css';
+import './MyInput.css';
 
 export const MyInput = (props) => {
     return (
         <div>
-            <input {...props} />
+            <input className='my_input' {...props} />
         </div>
     )
 }
