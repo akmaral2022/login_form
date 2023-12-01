@@ -1,6 +1,7 @@
 import { MyButton } from "../Button/MyButton"
 import { MyInput } from "../Input/MyInput"
 import './Form.css'
+import Hide from '../../img/Hide.png'
 
 export const CustomForm = () => {
     return (
