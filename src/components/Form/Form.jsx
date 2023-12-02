@@ -5,20 +5,25 @@ import { useState } from "react"
 
 export const CustomForm = () => {
     const [loginValue, setLigonValue] = useState('')
+    const [passwordValue, setPassworValue] = useState('')
     function isLogin(e) {
         const value = e.target.value
+        setLigonValue(value)
         const regExpLogin = /^[\w.]{0,25}@gmail\.com$/
         if (regExpLogin.test(value)) {
             console.log('Finaly');
         } console.log('Wrong');
-        setLigonValue(value)
+    }
+    function isPassword(e) {
+        const password = e.target.value
+        const regExpLogin = /^[\w.]{0,25}@gmail\.com$/
     }
 
     return (
         <div className="form_login">
             <h1>Welcome Back!</h1>
-            <MyInput placeholder='Введите логин' onChange={isLogin} value={loginValue}></MyInput>
-            <MyInput placeholder='Введите пароль' type='password' />
+            <MyInput placeholder='Введите логин' value={loginValue} onChange={isLogin}></MyInput>
+            <MyInput placeholder='Введите пароль' type='password' value={passwordValue} onChange={isLogin} />
             <MyButton>Войти</MyButton>
             <a href="https://www.example.com">У меня ёще нет аккуанта</a>
         </div>
