@@ -3,8 +3,8 @@ import { MyInput } from "../Input/MyInput"
 import './Form.css'
 import { useState } from "react"
 
-export const CustomForm = () => {
-    const [loginValue, setLigonValue] = useState('')
+export const CustomForm = ({ onError, onSuccess }) => {
+    const [loginValue, setLoginValue] = useState('')
     const [loginError, setLoginError] = useState('')
     const [passwordValue, setPassworValue] = useState('')
     const [passwordError, setPasswordError] = useState('')
@@ -14,7 +14,7 @@ export const CustomForm = () => {
 
     function isLogin(e) {
         const value = e.target.value
-        setLigonValue(value)
+        setLoginValue(value)
     }
 
     function isPassword(e) {
@@ -25,10 +25,13 @@ export const CustomForm = () => {
     function checkData() {
         if (regExpLogin.test(loginValue) && regExpPassword.test(passwordValue)) {
             console.log('Принято')
-        } else if (!regExpLogin.test(loginValue)) {
-            console.log('Неверно указан логин');
-        } else if (!regExpPassword.test(passwordValue)) {
-            console.log('Неверно указан пароль');
+            onSuccess()
+        } else if (!regExpLogin.test(loginValue) || !regExpPassword.test(passwordValue)) {
+            const errorMessage = 'Неверно указан логин или пароль'
+            setLoginError(errorMessage)
+            setPasswordError(errorMessage)
+            onError(errorMessage)
+            console.log(errorMessage);
         }
 
     }
