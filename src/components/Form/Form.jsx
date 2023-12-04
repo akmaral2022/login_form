@@ -16,7 +16,10 @@ export const CustomForm = () => {
     }
     function isPassword(e) {
         const password = e.target.value
-        const regExpLogin = /^[\w.]{0,25}@gmail\.com$/
+        const regExpPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}/
+        if (regExpPassword.test(password)) {
+            console.log('Good password');
+        }
     }
 
     return (
