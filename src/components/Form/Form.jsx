@@ -14,19 +14,21 @@ export const CustomForm = () => {
             console.log('Finaly');
         } console.log('Wrong');
     }
+
     function isPassword(e) {
         const password = e.target.value
         const regExpPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}/
+        setPassworValue(password)
         if (regExpPassword.test(password)) {
             console.log('Good password');
-        }
+        } console.log('Too short');
     }
 
     return (
         <div className="form_login">
             <h1>Welcome Back!</h1>
             <MyInput placeholder='Введите логин' value={loginValue} onChange={isLogin}></MyInput>
-            <MyInput placeholder='Введите пароль' type='password' value={passwordValue} onChange={isLogin} />
+            <MyInput placeholder='Введите пароль' type='password' value={passwordValue} onChange={isPassword} />
             <MyButton>Войти</MyButton>
             <a href="https://www.example.com">У меня ёще нет аккуанта</a>
         </div>
