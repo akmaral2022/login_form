@@ -1,10 +1,12 @@
 .form_login {
+    width: 343px;
     height: 410px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     position: relative;
+    box-sizing: border-box;
 }
 
 h1 {
@@ -20,6 +22,8 @@ a {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
 }
+
+
 
 .show__password {
     border: none;

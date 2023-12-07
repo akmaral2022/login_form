@@ -3,6 +3,7 @@ import { MyInput } from "../Input/MyInput"
 import './Form.css'
 import { useState } from "react"
 import Show from "../../img/Show.png"
+import Hide from "../../img/Hide.png"
 
 export const CustomForm = ({ onError, onSuccess }) => {
     const [loginValue, setLoginValue] = useState('')
@@ -11,18 +12,19 @@ export const CustomForm = ({ onError, onSuccess }) => {
     const [passwordError, setPasswordError] = useState('')
     const regExpLogin = /^[\w.]{0,25}@gmail\.com$/
     const regExpPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}/
+    const [showPassword, setShowPassword] = useState(false)
 
 
     function isLogin(e) {
         const value = e.target.value
         setLoginValue(value)
-        loginError('Неверный логин')
+
     }
 
     function isPassword(e) {
         const password = e.target.value
         setPassworValue(password)
-        passwordError('Неверный формат пароля')
+
     }
 
     function checkData() {
@@ -36,7 +38,10 @@ export const CustomForm = ({ onError, onSuccess }) => {
             onError(errorMessage)
             console.log(errorMessage);
         }
+    }
 
+    function passwordIsShown() {
+        setShowPassword(!showPassword)
     }
 
 
@@ -44,10 +49,10 @@ export const CustomForm = ({ onError, onSuccess }) => {
         <div className="form_login">
             <h1>Welcome Back!</h1>
             <MyInput placeholder='Введите логин' value={loginValue} onChange={isLogin}></MyInput>
-            <div className="password">
-                <MyInput placeholder='Введите пароль' type='password' value={passwordValue} onChange={isPassword} />
-                <button className="show__password">
-                    <img src={Show}></img>
+            <div className="input__block">
+                <MyInput placeholder='Введите пароль' type={showPassword ? 'text' : 'password'} value={passwordValue} onChange={isPassword} />
+                <button className="show__password" onClick={passwordIsShown}>
+                    {showPassword ? <img src={Hide}></img> : <img src={Show}></img>}
                 </button>
             </div>
             <MyButton onClick={checkData}>Войти</MyButton>
