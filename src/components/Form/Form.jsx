@@ -2,6 +2,7 @@ import { MyButton } from "../Button/MyButton"
 import { MyInput } from "../Input/MyInput"
 import './Form.css'
 import { useState } from "react"
+import Show from "../../img/Show.png"
 
 export const CustomForm = ({ onError, onSuccess }) => {
     const [loginValue, setLoginValue] = useState('')
@@ -15,11 +16,13 @@ export const CustomForm = ({ onError, onSuccess }) => {
     function isLogin(e) {
         const value = e.target.value
         setLoginValue(value)
+        loginError('Неверный логин')
     }
 
     function isPassword(e) {
         const password = e.target.value
         setPassworValue(password)
+        passwordError('Неверный формат пароля')
     }
 
     function checkData() {
@@ -41,7 +44,12 @@ export const CustomForm = ({ onError, onSuccess }) => {
         <div className="form_login">
             <h1>Welcome Back!</h1>
             <MyInput placeholder='Введите логин' value={loginValue} onChange={isLogin}></MyInput>
-            <MyInput placeholder='Введите пароль' type='password' value={passwordValue} onChange={isPassword} />
+            <div className="password">
+                <MyInput placeholder='Введите пароль' type='password' value={passwordValue} onChange={isPassword} />
+                <button className="show__password">
+                    <img src={Show}></img>
+                </button>
+            </div>
             <MyButton onClick={checkData}>Войти</MyButton>
             <a href="https://www.example.com">У меня ещё нет аккаунта</a>
         </div>
