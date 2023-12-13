@@ -36,7 +36,7 @@ export const CustomForm = ({ onError, onSuccess }) => {
             setLoginError(errorMessage)
             setPasswordError(errorMessage)
             onError(errorMessage)
-            console.log(errorMessage);
+            console.log(errorMessage, loginError, passwordError);
         }
     }
 
@@ -52,7 +52,7 @@ export const CustomForm = ({ onError, onSuccess }) => {
             <div className="input__block">
                 <MyInput placeholder='Введите пароль' type={showPassword ? 'text' : 'password'} value={passwordValue} onChange={isPassword} />
                 <button className="show__password" onClick={passwordIsShown}>
-                    {showPassword ? <img src={Hide}></img> : <img src={Show}></img>}
+                    {showPassword ? <img src={Hide} alt="Hide password"></img> : <img src={Show} alt="Show password"></img>}
                 </button>
             </div>
             <MyButton onClick={checkData}>Войти</MyButton>
