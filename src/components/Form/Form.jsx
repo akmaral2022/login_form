@@ -11,7 +11,7 @@ export const CustomForm = ({ onError, onSuccess }) => {
     const [passwordValue, setPassworValue] = useState('')
     const [passwordError, setPasswordError] = useState('')
     const regExpLogin = /^[\w.]{0,25}@gmail\.com$/
-    const regExpPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}/
+    const regExpPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}/ 
     const [showPassword, setShowPassword] = useState(false)
 
 

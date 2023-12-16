@@ -3,14 +3,16 @@ import { useState } from "react"
 import { MyInput } from "../components/Input/MyInput"
 
 export function Login() {
-    const [User, setUser] = useState({
-        userLigon: '',
+    const [user, setUser] = useState({
+        userLogin: '',
         userPassword: ''
     })
     return (
         <div>
             <h1>Welcome Back!</h1>
-            <MyInput placeholder='Введите логин' />
+            <MyInput placeholder='Введите логин'
+                value={user.userLogin}
+                onChange={setUser} />
         </div>
     )
 }
