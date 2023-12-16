@@ -12,7 +12,12 @@ export function Login() {
             <h1>Welcome Back!</h1>
             <MyInput placeholder='Введите логин'
                 value={user.userLogin}
-                onChange={setUser} />
+                onChange={e =>
+                    setUser({
+                        ...user,
+                        userLogin: e.target.value
+
+                    })} />
         </div>
     )
 }
