@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
-import { CustomForm } from './components/Form/Form';
+import { CustomForm } from './pages/Form/Form';
 
 function App() {
   const [errorMessage, setErrorMessage] = useState(null);
