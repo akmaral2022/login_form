@@ -15,18 +15,6 @@ export const CustomForm = ({ onError, onSuccess }) => {
     const [showPassword, setShowPassword] = useState(false)
 
 
-    function isLogin(e) {
-        const value = e.target.value
-        setLoginValue(value)
-
-    }
-
-    function isPassword(e) {
-        const password = e.target.value
-        setPassworValue(password)
-
-    }
-
     function checkData() {
         if (regExpLogin.test(loginValue) && regExpPassword.test(passwordValue)) {
             console.log('Принято')
@@ -48,9 +36,9 @@ export const CustomForm = ({ onError, onSuccess }) => {
     return (
         <div className="form_login">
             <h1>Welcome Back!</h1>
-            <MyInput placeholder='Введите логин' value={loginValue} onChange={isLogin}></MyInput>
+            <MyInput placeholder='Введите логин' value={loginValue} onChange={(e) => setLoginValue(e.target.value)}></MyInput>
             <div className="input__block">
-                <MyInput placeholder='Введите пароль' type={showPassword ? 'text' : 'password'} value={passwordValue} onChange={isPassword} />
+                <MyInput placeholder='Введите пароль' type={showPassword ? 'text' : 'password'} value={passwordValue} onChange={(e) => setPassworValue(e.target.value)} />
                 <button className="show__password" onClick={passwordIsShown}>
                     {showPassword ? <img src={Hide} alt="Hide password"></img> : <img src={Show} alt="Show password"></img>}
                 </button>
