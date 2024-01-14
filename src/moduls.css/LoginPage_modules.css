@@ -1,0 +1,14 @@
+.login__page {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 1440px;
+    margin: auto;
+}
+
+.login__poster {
+    text-align: center;
+    margin: 178px 48px;
+}
+
+.login__place {}

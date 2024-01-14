@@ -4,12 +4,12 @@ import './index.css';
 import App from './App';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { Entered } from './pages/Entered';
-import { Login } from './pages/Login';
+import { LoginPage } from './pages/LoginPage';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Login />
+    element: <LoginPage />
   },
   {
     path: '/entered',

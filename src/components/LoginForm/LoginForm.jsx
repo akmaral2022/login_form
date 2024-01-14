@@ -43,7 +43,10 @@ export const LoginForm = ({ onError, onSuccess }) => {
                     {showPassword ? <img src={Hide} alt="Hide password"></img> : <img src={Show} alt="Show password"></img>}
                 </button>
             </div>
-            <MyButton onClick={checkData}>Войти</MyButton>
+
+            <div className="enter__button">
+                <MyButton onClick={checkData}>Войти</MyButton>
+            </div>
             <a href="https://www.example.com">У меня ещё нет аккаунта</a>
         </div>
     )
