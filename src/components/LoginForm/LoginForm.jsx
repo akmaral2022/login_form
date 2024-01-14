@@ -1,11 +1,11 @@
-import { MyButton } from "../../components/Button/MyButton"
-import { MyInput } from "../../components/Input/MyInput"
+import { MyButton } from "../Button/MyButton"
+import { MyInput } from "../Input/MyInput"
 import './Form.css'
 import { useState } from "react"
 import Show from "../../img/Show.png"
 import Hide from "../../img/Hide.png"
 
-export const CustomForm = ({ onError, onSuccess }) => {
+export const LoginForm = ({ onError, onSuccess }) => {
     const [loginValue, setLoginValue] = useState('')
     const [loginError, setLoginError] = useState('')
     const [passwordValue, setPassworValue] = useState('')
